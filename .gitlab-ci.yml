@@ -1,11 +1,5 @@
 image: "ruby:2.5"
 
-services:
-  - postgres:latest
-
-variables:
-  POSTGRES_DB: database_name
-
 # Cache gems in between builds
 cache:
   paths:
@@ -21,8 +15,6 @@ before_script:
   - bundle install -j $(nproc) --path vendor  # Install dependencies into ./vendor/ruby
 
 rails:
-  variables:
-    DATABASE_URL: "postgresql://postgres:postgres@postgres:5432/$POSTGRES_DB"
   script:
   - bundle exec rake db:migrate
   - bundle exec rake test
