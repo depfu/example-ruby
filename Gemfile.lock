@@ -98,7 +98,7 @@ GEM
     public_suffix (3.0.2)
     puma (3.9.1)
     rack (2.0.6)
-    rack-protection (2.0.0)
+    rack-protection (2.0.5)
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
